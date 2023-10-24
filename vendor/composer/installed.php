@@ -5,8 +5,8 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e70e0c0c8bc3b53abe3408a0f281dc5e6da14ba3',
-        'name' => 'laravel/laravel',
+        'reference' => '1bf35084e4260117d790a6a6cf631a78f3e16e96',
+        'name' => 'hexlet/code',
         'dev' => true,
     ),
     'versions' => array(
@@ -156,6 +156,15 @@
             'aliases' => array(),
             'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
             'dev_requirement' => true,
+        ),
+        'hexlet/code' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '1bf35084e4260117d790a6a6cf631a78f3e16e96',
+            'dev_requirement' => false,
         ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
@@ -368,15 +377,6 @@
             'install_path' => __DIR__ . '/../laravel/framework',
             'aliases' => array(),
             'reference' => '09137f50f715c1efc649788a26092dcb1ec4ab6e',
-            'dev_requirement' => false,
-        ),
-        'laravel/laravel' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => 'e70e0c0c8bc3b53abe3408a0f281dc5e6da14ba3',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -987,6 +987,15 @@
             'install_path' => __DIR__ . '/../spatie/laravel-ignition',
             'aliases' => array(),
             'reference' => 'bf21cd15aa47fa4ec5d73bbc932005c70261efc8',
+            'dev_requirement' => true,
+        ),
+        'squizlabs/php_codesniffer' => array(
+            'pretty_version' => '3.7.2',
+            'version' => '3.7.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
+            'aliases' => array(),
+            'reference' => 'ed8e00df0a83aa96acf703f8c2979ff33341f879',
             'dev_requirement' => true,
         ),
         'symfony/console' => array(
