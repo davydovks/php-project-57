@@ -1,5 +1,7 @@
-### Hexlet tests and linter status:
+## Task Manager
 [![Actions Status](https://github.com/davydovks/php-project-57/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/davydovks/php-project-57/actions)
 [![Actions Status](https://github.com/davydovks/php-project-57/actions/workflows/coverage.yml/badge.svg)](https://github.com/davydovks/php-project-57/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/500f7ea2ebf6932335b6/maintainability)](https://codeclimate.com/github/davydovks/php-project-57/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/500f7ea2ebf6932335b6/test_coverage)](https://codeclimate.com/github/davydovks/php-project-57/test_coverage)
+
+You can test the app here: https://task-manager-76kf.onrender.com/
