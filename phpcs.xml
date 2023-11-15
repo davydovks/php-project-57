@@ -2,10 +2,20 @@
 <!-- @see https://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php -->
 <ruleset name= "Laravel PHPCS Rules">
 
-    <description>PHPCS ruleset for Example app.</description>
+    <description>PHPCS ruleset for Task Manager</description>
 
-    <file>tests</file>
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg name="parallel" value="100"/>
+    <arg value="np"/>
+
     <file>app</file>
+    <file>config</file>
+    <file>public</file>
+    <file>resources</file>
+    <file>routes</file>
+    <file>tests</file>
+    <file>database</file>
 
     <!-- Show progress of the run -->
     <arg value= "p"/>
