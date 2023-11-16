@@ -13,7 +13,7 @@ class TaskStatusController extends Controller
     public function index()
     {
         $taskStatuses = TaskStatus::all();
-        return view("task_status.index", compact("taskStatuses"));
+        return view('task_status.index', compact('taskStatuses'));
     }
 
     /**
@@ -22,7 +22,7 @@ class TaskStatusController extends Controller
     public function create()
     {
         $taskStatus = new TaskStatus();
-        return view("task_status.create", compact("taskStatus"));
+        return view('task_status.create', compact('taskStatus'));
     }
 
     /**
