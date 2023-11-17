@@ -43,5 +43,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $taskStatuses->links() }}
     </div>
 @endsection
