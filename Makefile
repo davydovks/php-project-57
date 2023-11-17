@@ -6,7 +6,7 @@ start-frontend:
 
 install:
 	composer install
-	cp -n .env.example .env
+	cp -n .env.testing .env
 	php artisan key:gen --ansi
 	npm ci
 	npm run build
