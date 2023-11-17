@@ -26,8 +26,7 @@ class TaskStatusController extends Controller
             abort(403, __('auth.forbidden'));
         }
 
-        $taskStatus = new TaskStatus();
-        return view('task_status.create', compact('taskStatus'));
+        return view('task_status.create');
     }
 
     /**
