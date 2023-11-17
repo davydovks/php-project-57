@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TaskStatus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskStatusController extends Controller
 {
@@ -21,6 +22,10 @@ class TaskStatusController extends Controller
      */
     public function create()
     {
+        if (!Auth::check()) {
+            abort(403, __('auth.forbidden'));
+        }
+
         $taskStatus = new TaskStatus();
         return view('task_status.create', compact('taskStatus'));
     }
