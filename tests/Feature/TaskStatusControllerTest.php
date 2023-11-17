@@ -7,16 +7,18 @@ use App\Models\{
     User,
     TaskStatus
 };
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TaskStatusControllerTest extends TestCase
 {
+    use RefreshDatabase;
+
     private User $user;
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->user = User::factory()->create();
-        //TaskStatus::factory()->count(10)->create();
     }
 
     public function testIndex(): void
