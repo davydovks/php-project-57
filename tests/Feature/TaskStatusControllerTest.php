@@ -3,10 +3,8 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use App\Models\{
-    User,
-    TaskStatus
-};
+use App\Models\User;
+use App\Models\TaskStatus;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TaskStatusControllerTest extends TestCase
