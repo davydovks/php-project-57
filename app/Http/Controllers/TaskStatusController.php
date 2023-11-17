@@ -35,6 +35,10 @@ class TaskStatusController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+            abort(419);
+        }
+
         $data = $request->validate([
             'name' => 'required',
         ]);
