@@ -39,7 +39,11 @@ class TaskStatusController extends Controller
         }
 
         $data = $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:task_statuses|max:255',
+        ], [
+            'name.unique' => __('validation.unique_name'),
+        ], [
+            'name' => __('validation.attributes.status')
         ]);
 
         $taskStatus = new TaskStatus();
@@ -81,7 +85,7 @@ class TaskStatusController extends Controller
         }
 
         $data = $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:task_statuses',
         ]);
 
         $taskStatus->fill($data);
