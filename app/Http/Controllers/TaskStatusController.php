@@ -57,7 +57,7 @@ class TaskStatusController extends Controller
      */
     public function show(TaskStatus $taskStatus)
     {
-        //
+        abort(403, __('auth.forbidden'));
     }
 
     /**
