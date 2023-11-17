@@ -2,6 +2,7 @@
     <h2 class="text-center">
         <a href="{{ route('home') }}">{{ config('app.name', 'Менеджер задач') }}</a>
     </h2>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -14,9 +15,8 @@
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('views.auth.email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                required autofocus autocomplete="username" />
-            {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
+                autofocus autocomplete="username" />
         </div>
 
         <!-- Password -->
@@ -25,8 +25,6 @@
 
             <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                 autocomplete="current-password" />
-
-            {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
         </div>
 
         <!-- Remember Me -->
