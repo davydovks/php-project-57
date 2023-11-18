@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TaskStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class TaskStatusController extends Controller
 {
@@ -85,7 +86,7 @@ class TaskStatusController extends Controller
         }
 
         $data = $request->validate([
-            'name' => 'required|max:255|unique:task_statuses,name,' . $taskStatus->id,
+            'name' => ['required', 'max:255', Rule::unique('task_statuses', 'name')->ignore($taskStatus)],
         ], [
             'name.unique' => __('validation.unique_name'),
         ], [
