@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskStatusController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(TaskStatus::class);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -22,10 +27,6 @@ class TaskStatusController extends Controller
      */
     public function create()
     {
-        if (!Auth::check()) {
-            abort(403, __('auth.forbidden'));
-        }
-
         return view('task_status.create');
     }
 
@@ -34,10 +35,6 @@ class TaskStatusController extends Controller
      */
     public function store(StoreTaskStatusRequest $request)
     {
-        if (!Auth::check()) {
-            abort(419);
-        }
-
         $data = $request->validated();
 
         $taskStatus = new TaskStatus();
@@ -54,7 +51,7 @@ class TaskStatusController extends Controller
      */
     public function show(TaskStatus $taskStatus)
     {
-        abort(403, __('auth.forbidden'));
+        //
     }
 
     /**
@@ -62,10 +59,6 @@ class TaskStatusController extends Controller
      */
     public function edit(TaskStatus $taskStatus)
     {
-        if (!Auth::check()) {
-            abort(403, __('auth.forbidden'));
-        }
-
         return view('task_status.edit', compact('taskStatus'));
     }
 
@@ -74,10 +67,6 @@ class TaskStatusController extends Controller
      */
     public function update(StoreTaskStatusRequest $request, TaskStatus $taskStatus)
     {
-        if (!Auth::check()) {
-            abort(419);
-        }
-
         $data = $request->validated();
 
         $taskStatus->fill($data);
@@ -93,10 +82,6 @@ class TaskStatusController extends Controller
      */
     public function destroy(TaskStatus $taskStatus)
     {
-        if (!Auth::check()) {
-            abort(419);
-        }
-
         $taskStatus->delete();
 
         flash(__('flash.task_statuses.delete.success'))->success();
