@@ -13,6 +13,11 @@ return [
         'log_in' => 'Войти',
         'email_password_reset_link' => 'Сбросить пароль',
     ],
+    'actions' => [
+        'delete' => 'Удалить',
+        'delete_confirm' => 'Вы уверены?',
+        'edit' => 'Изменить',
+    ],
     'task_status' => [
         'index' => [
             'header' => 'Статусы',
@@ -21,9 +26,6 @@ return [
             'name' => 'Имя',
             'created_at' => 'Дата создания',
             'actions' => 'Действия',
-            'delete' => 'Удалить',
-            'delete_confirm' => 'Вы уверены?',
-            'edit' => 'Изменить',
         ],
         'create' => [
             'header' => 'Создать статус',
@@ -48,9 +50,6 @@ return [
             'assigned_to' => 'Исполнитель',
             'created_at' => 'Дата создания',
             'actions' => 'Действия',
-            'delete' => 'Удалить',
-            'delete_confirm' => 'Вы уверены?',
-            'edit' => 'Изменить',
         ],
     ],
 ];
