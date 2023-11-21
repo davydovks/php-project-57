@@ -16,6 +16,7 @@ return [
         'string' => ':Attribute должен иметь длину не менее :min символов',
     ],
     'required' => 'Это обязательное поле',
+    'string' => 'Поле :attribute должно содержать строку',
     'unique' => 'Такой :attribute уже используется',
     'unique_name' => ':Attribute с таким именем уже существует',
 ];
