@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\TaskStatus;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Symfony\Component\Yaml\Yaml;
 
 class TaskStatusSeeder extends Seeder
 {
@@ -13,14 +13,9 @@ class TaskStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        TaskStatus::factory()
-            ->count(4)
-            ->sequence(
-                ['name' => 'новый'],
-                ['name' => 'в работе'],
-                ['name' => 'на тестировании'],
-                ['name' => 'завершен'],
-            )
+        $statuses = Yaml::parseFile(database_path('statuses.yaml'));
+        TaskStatus::factory(count($statuses))
+            ->sequence(...$statuses)
             ->create();
     }
 }
