@@ -39,7 +39,7 @@ class Task extends Model
     }
 
     /**
-     * Get the post that owns the comment.
+     * Get the user that the task was assigned to
      */
     public function assignedTo()
     {
