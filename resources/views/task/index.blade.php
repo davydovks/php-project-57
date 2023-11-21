@@ -23,10 +23,8 @@
             </div>
 
             <div class="ml-auto">
-                <a href="{{ route('tasks.create') }}"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">
-                    {{ __('views.task.index.create_task') }}
-                </a>
+                <x-link-button route="{{ route('tasks.create') }}" text="{{ __('views.task.index.create_task') }}"
+                    class="ml-2" />
             </div>
         </div>
 
