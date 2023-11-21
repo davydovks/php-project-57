@@ -30,10 +30,8 @@
                                     href="{{ route('task_statuses.destroy', $status->id) }}">
                                     {{ __('views.task_status.index.delete') }}
                                 </a>
-                                <a class="text-blue-600 hover:text-blue-900"
-                                    href="{{ route('task_statuses.edit', $status->id) }}">
-                                    {{ __('views.task_status.index.edit') }}
-                                </a>
+                                <x-link-blue route="{{ route('task_statuses.edit', $status->id) }}"
+                                    text="{{ __('views.task_status.index.edit') }}" />
                             </td>
                         @endauth
                     </tr>
