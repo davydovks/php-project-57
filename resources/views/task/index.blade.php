@@ -58,9 +58,11 @@
                         <td>{{ $task->created_at->format('d.m.Y') }}</td>
                         @auth
                             <td>
-                                <x-link-red route="{{ route('tasks.destroy', $task->id) }}"
-                                    confirm="{{ __('views.actions.delete_confirm') }}"
-                                    text="{{ __('views.actions.delete') }}" />
+                                @can('delete', $task)
+                                    <x-link-red route="{{ route('tasks.destroy', $task->id) }}"
+                                        confirm="{{ __('views.actions.delete_confirm') }}"
+                                        text="{{ __('views.actions.delete') }}" />
+                                @endcan
                                 <x-link-blue route="{{ route('tasks.edit', $task->id) }}"
                                     text="{{ __('views.actions.edit') }}" />
                             </td>
