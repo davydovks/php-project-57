@@ -25,10 +25,12 @@
                 {{ Form::close() }}
             </div>
 
-            <div class="ml-auto">
-                <x-link-button route="{{ route('tasks.create') }}" text="{{ __('views.task.index.create_task') }}"
-                    class="ml-2" />
-            </div>
+            @auth
+                <div class="ml-auto">
+                    <x-link-button route="{{ route('tasks.create') }}" text="{{ __('views.task.index.create_task') }}"
+                        class="ml-2" />
+                </div>
+            @endauth
         </div>
 
         <table class="mt-4">
