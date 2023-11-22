@@ -56,7 +56,7 @@ return [
             'label' => 'Имя',
             'description' => 'Описание',
             'status' => 'Статус',
-            'default_dropdown' => '----------',
+            'placeholder' => '----------',
             'assigned_to' => 'Исполнитель',
             'labels' => 'Метки',
             'button' => 'Создать',

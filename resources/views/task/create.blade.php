@@ -19,12 +19,12 @@
                 <div class="mt-2">
                     {{ Form::label('status_id', __('views.task.create.status')) }}
                 </div>
-                <x-filter name="status_id" default="{{ __('views.task.create.default_dropdown') }}"
+                <x-filter name="status_id" default="{{ __('views.task.create.placeholder') }}"
                     items="{{ json_encode($taskStatuses->pluck('name', 'id')) }}" class="w-1/3" />
                 <div class="mt-2">
                     {{ Form::label('assigned_to_id', __('views.task.create.assigned_to')) }}
                 </div>
-                <x-filter name="assigned_to_id" default="{{ __('views.task.create.default_dropdown') }}"
+                <x-filter name="assigned_to_id" default="{{ __('views.task.create.placeholder') }}"
                     items="{{ json_encode($users->pluck('name', 'id')) }}" class="w-1/3" />
                 <div class="mt-2">
                     {{ Form::label('labels', __('views.task.create.labels')) }}
