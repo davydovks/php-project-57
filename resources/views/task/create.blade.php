@@ -19,18 +19,18 @@
                 <div class="mt-2">
                     {{ Form::label('status_id', __('views.task.create.status')) }}
                 </div>
-                <x-filter name="status_id" id="status_id" default="{{ __('views.task.create.default_dropdown') }}"
-                    items="{{ json_encode($taskStatuses) }}" class="w-1/3" />
+                <x-filter name="status_id" default="{{ __('views.task.create.default_dropdown') }}"
+                    items="{{ json_encode($taskStatuses->pluck('name', 'id')) }}" class="w-1/3" />
                 <div class="mt-2">
                     {{ Form::label('assigned_to_id', __('views.task.create.assigned_to')) }}
                 </div>
-                <x-filter name="assigned_to_id" id="assigned_to_id" default="{{ __('views.task.create.default_dropdown') }}"
-                    items="{{ json_encode($users) }}" class="w-1/3" />
+                <x-filter name="assigned_to_id" default="{{ __('views.task.create.default_dropdown') }}"
+                    items="{{ json_encode($users->pluck('name', 'id')) }}" class="w-1/3" />
                 <div class="mt-2">
                     {{ Form::label('labels', __('views.task.create.labels')) }}
                 </div>
                 <x-filter name="labels[]" id="labels" default="" multiple="multiple"
-                    items="{{ json_encode($taskStatuses) }}" class="w-1/3 h-32" />
+                    items="{{ json_encode($taskStatuses->pluck('name', 'id')) }}" class="w-1/3 h-32" />
                 <x-submit-button caption="{{ __('views.task.create.button') }}" />
             </div>
         {{ Form::close() }}
