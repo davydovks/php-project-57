@@ -14,7 +14,7 @@
                     {{ Form::label('description', __('views.task.create.description')) }}
                 </div>
                 <div>
-                    {{ Form::textarea('description', null, ['class' => 'rounded border-gray-300 w-1/3 h-32', 'cols' => '50', 'rows' => '10', 'id' => 'description']) }}
+                    {{ Form::textarea('description', null, ['class' => 'rounded border-gray-300 w-1/3 h-32', 'cols' => '50', 'rows' => '10']) }}
                 </div>
                 <div class="mt-2">
                     {{ Form::label('status_id', __('views.task.create.status')) }}
