@@ -45,6 +45,7 @@ class TaskControllerTest extends TestCase
 
         $response = $this->actingAs($this->user)->get(route('tasks.edit', $task));
         $response->assertOk();
+        $response->assertSee($task->name);
     }
 
     public function testStore(): void
