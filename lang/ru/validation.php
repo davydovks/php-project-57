@@ -7,10 +7,14 @@ return [
         'password' => 'пароль',
         'status' => 'статус',
         'task' => 'задача',
+        'label' => 'метка',
+        'description' => 'описание',
     ],
     'confirmed' => ':Attribute и подтверждение не совпадают',
     'max' => [
         'string' => ':Attribute должен иметь длину не более :max символов',
+        'string_f' => ':Attribute должна иметь длину не более :max символов',
+        'string_n' => ':Attribute должно иметь длину не более :max символов',
     ],
     'min' => [
         'string' => ':Attribute должен иметь длину не менее :min символов',
