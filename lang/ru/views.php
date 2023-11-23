@@ -29,12 +29,12 @@ return [
         ],
         'create' => [
             'header' => 'Создать статус',
-            'label' => 'Имя',
+            'name' => 'Имя',
             'button' => 'Создать',
         ],
         'edit' => [
             'header' => 'Изменение статуса',
-            'label' => 'Имя',
+            'name' => 'Имя',
             'button' => 'Обновить',
         ],
     ],
@@ -53,7 +53,7 @@ return [
         ],
         'create' => [
             'header' => 'Создать задачу',
-            'label' => 'Имя',
+            'name' => 'Имя',
             'description' => 'Описание',
             'status' => 'Статус',
             'placeholder' => '----------',
@@ -63,7 +63,7 @@ return [
         ],
         'edit' => [
             'header' => 'Изменение задачи',
-            'label' => 'Имя',
+            'name' => 'Имя',
             'description' => 'Описание',
             'status' => 'Статус',
             'placeholder' => '----------',
