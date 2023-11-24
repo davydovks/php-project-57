@@ -26,10 +26,10 @@
                         <td>{{ $label->description }}</td>
                         <td>{{ $label->created_at}}</td>
                         <td>
-                            <x-link-red route="{{ route('labels.destroy', $status->id) }}"
+                            <x-link-red route="{{ route('labels.destroy', $label->id) }}"
                                 confirm="{{ __('views.actions.delete_confirm') }}"
                                 text="{{ __('views.actions.delete') }}" />
-                            <x-link-blue route="{{ route('labels.edit', $status->id) }}"
+                            <x-link-blue route="{{ route('labels.edit', $label->id) }}"
                                 text="{{ __('views.actions.edit') }}" />
                         </td>
                     </tr>
