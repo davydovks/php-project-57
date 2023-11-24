@@ -60,4 +60,12 @@ class Task extends Model
 
         return $query;
     }
+
+    /**
+     * Get all labels of the task
+     */
+    public function labels()
+    {
+        return $this->belongsToMany(Label::class);
+    }
 }
