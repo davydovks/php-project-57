@@ -8,10 +8,16 @@ install:
 	composer install
 	make fix-fakerphp
 	cp -n .env.testing .env
-	php artisan key:gen --ansi
-	php artisan migrate:fresh --seed
+	make key
+	make prepare-db
 	npm ci
 	npm run build
+
+key:
+	php artisan key:gen --ansi
+
+prepare-db:
+	php artisan migrate:fresh --seed
 
 watch:
 	npm run watch
