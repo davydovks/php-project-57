@@ -6,6 +6,7 @@ start-frontend:
 
 install:
 	composer install
+	make fix-fakerphp
 	cp -n .env.testing .env
 	php artisan key:gen --ansi
 	php artisan migrate
@@ -66,3 +67,6 @@ ide-helper:
 	php artisan ide-helper:gen
 	php artisan ide-helper:meta
 	php artisan ide-helper:mod -n
+
+fix-fakerphp:
+	cp -f src/Person.php vendor/fakerphp/faker/src/Faker/Provider/ru_RU/Person.php
