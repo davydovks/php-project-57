@@ -16,7 +16,7 @@ RUN apt-get install -y nodejs
 WORKDIR /app
 
 COPY . .
-RUN composer install
+RUN make install
 RUN npm ci
 RUN npm run build
 
