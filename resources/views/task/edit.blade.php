@@ -29,8 +29,8 @@
                 <div class="mt-2">
                     {{ Form::label('labels', __('views.task.edit.labels')) }}
                 </div>
-                <x-filter name="labels[]" id="labels" placeholder="" multiple="multiple"
-                    items="{{ json_encode($taskStatuses->pluck('name', 'id')) }}" class="w-1/3 h-32" />
+                <x-filter name="labels" id="labels" placeholder="" multiple="multiple"
+                    items="{{ json_encode($labels->pluck('name', 'id')) }}" class="w-1/3 h-32" />
                 <x-submit-button caption="{{ __('views.task.edit.button') }}" />
             </div>
         </form>
