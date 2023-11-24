@@ -9,8 +9,7 @@ install:
 	make fix-fakerphp
 	cp -n .env.testing .env
 	php artisan key:gen --ansi
-	php artisan migrate
-	php artisan db:seed
+	php artisan migrate:fresh --seed
 	npm ci
 	npm run build
 
