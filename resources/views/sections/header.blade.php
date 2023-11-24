@@ -3,7 +3,7 @@
         <!--Title-->
         <a href="{{ route('home') }}" class="flex items-center">
             <span
-                class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ __('header.app_name') }}</span>
+                class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ config('app.name') }}</span>
         </a>
 
         <!--Menu-->
