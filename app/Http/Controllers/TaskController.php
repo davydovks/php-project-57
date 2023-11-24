@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
+    private ?User $user;
+
     public function __construct()
     {
         $this->authorizeResource(Task::class);
+        $this->user = Auth::user();
     }
 
     /**
@@ -47,7 +50,7 @@ class TaskController extends Controller
     public function store(StoreTaskRequest $request)
     {
         $data = $request->validated();
-        $task = Auth::user()->createdTasks()->make($data);
+        $task = $this->user->createdTasks()->make($data);
         $task->save();
         $labels = $request->input('labels');
         $task->labels()->sync($labels);
