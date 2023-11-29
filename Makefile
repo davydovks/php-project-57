@@ -7,7 +7,7 @@ start-frontend:
 install:
 	composer install
 	make fix-fakerphp
-	cp -n .env.testing .env
+	cp -n .env.example .env
 	make key
 	make prepare-db
 	npm ci
