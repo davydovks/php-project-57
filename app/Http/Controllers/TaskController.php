@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
-use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Label;
 use App\Models\Task;
 use App\Models\TaskStatus;
@@ -81,7 +80,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(StoreTaskRequest $request, Task $task)
     {
         $data = $request->validated();
         $task->fill($data);
