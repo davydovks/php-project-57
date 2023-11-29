@@ -55,7 +55,7 @@
                             <x-link-blue route="{{ route('tasks.show', $task->id) }}" text="{{ $task->name }}" />
                         </td>
                         <td>{{ $task->createdBy->name }}</td>
-                        <td>{{ $task->assignedTo->name }}</td>
+                        <td>{{ optional($task->assignedTo)->name }}</td>
                         <td>{{ $task->created_at->format('d.m.Y') }}</td>
                         @auth
                             <td>
