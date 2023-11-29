@@ -50,7 +50,7 @@ class TaskController extends Controller
         $data = $request->validated();
         $task = Auth::user()->createdTasks()->make($data);
         $task->save();
-        $labels = Arr::whereNotNull($request->input('labels'));
+        $labels = Arr::whereNotNull($request->input('labels') ?? []);
         $task->labels()->sync($labels);
 
         flash(__('flash.tasks.store.success'))->success();
@@ -86,7 +86,7 @@ class TaskController extends Controller
         $data = $request->validated();
         $task->fill($data);
         $task->save();
-        $labels = Arr::whereNotNull($request->input('labels'));
+        $labels = Arr::whereNotNull($request->input('labels') ?? []);
         $task->labels()->sync($labels);
 
         flash(__('flash.tasks.update.success'))->success();
