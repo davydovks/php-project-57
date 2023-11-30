@@ -4,7 +4,6 @@ use App\Http\Controllers\LabelController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TaskStatusController;
-use App\Models\Label;
 use Illuminate\Support\Facades\Route;
 
 /*
