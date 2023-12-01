@@ -63,7 +63,7 @@ class TaskControllerTest extends TestCase
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
 
-        $this->assertDatabaseHas('tasks', (array) $data);
+        $this->assertDatabaseHas('tasks', $data);
     }
 
     public function testUpdate(): void
@@ -71,14 +71,14 @@ class TaskControllerTest extends TestCase
         $task = Task::factory()->create();
         $data = Task::factory()->make()->only('name', 'status_id');
 
-        $response = $this->patch(route('tasks.update', $task), (array) $data);
+        $response = $this->patch(route('tasks.update', $task), $data);
         $response->assertForbidden();
-        $this->assertDatabaseMissing('tasks', (array) $data);
+        $this->assertDatabaseMissing('tasks', $data);
 
-        $response = $this->actingAs($this->user)->patch(route('tasks.update', $task), (array) $data);
+        $response = $this->actingAs($this->user)->patch(route('tasks.update', $task), $data);
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
-        $this->assertDatabaseHas('tasks', (array) $data);
+        $this->assertDatabaseHas('tasks', $data);
     }
 
     public function testDelete(): void
