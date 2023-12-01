@@ -25,8 +25,8 @@ class TaskController extends Controller
     {
         $filter = $request->input('filter');
         $tasks = Task::filter()->orderBy('id')->paginate();
-        $taskStatusesById = TaskStatus::all()->pluck('name', 'id');
-        $usersById = User::all()->pluck('name', 'id');
+        $taskStatusesById = TaskStatus::pluck('name', 'id');
+        $usersById = User::pluck('name', 'id');
         return view('task.index', compact('tasks', 'taskStatusesById', 'usersById', 'filter'));
     }
 
