@@ -52,7 +52,7 @@ class TaskStatusControllerTest extends TestCase
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
 
-        $this->assertDatabaseHas('task_statuses', (array) $data);
+        $this->assertDatabaseHas('task_statuses', $data);
     }
 
     public function testUpdate(): void
@@ -60,14 +60,14 @@ class TaskStatusControllerTest extends TestCase
         $taskStatus = TaskStatus::factory()->create();
         $data = TaskStatus::factory()->make()->only('name');
 
-        $response = $this->patch(route('task_statuses.update', $taskStatus), (array) $data);
+        $response = $this->patch(route('task_statuses.update', $taskStatus), $data);
         $response->assertForbidden();
-        $this->assertDatabaseMissing('task_statuses', (array) $data);
+        $this->assertDatabaseMissing('task_statuses', $data);
 
-        $response = $this->actingAs($this->user)->patch(route('task_statuses.update', $taskStatus), (array) $data);
+        $response = $this->actingAs($this->user)->patch(route('task_statuses.update', $taskStatus), $data);
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
-        $this->assertDatabaseHas('task_statuses', (array) $data);
+        $this->assertDatabaseHas('task_statuses', $data);
     }
 
     public function testDelete(): void
