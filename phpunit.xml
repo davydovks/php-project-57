@@ -11,7 +11,11 @@
     </testsuites>
     <source>
         <include>
-            <directory>app</directory>
+            <directory suffix=".php">app/Http/Controllers</directory>
+            <directory suffix=".php">app/Http/Requests</directory>
+            <directory suffix=".php">app/Models</directory>
+            <directory suffix=".php">app/Policies</directory>
+            <directory suffix=".php">database/factories</directory>
         </include>
     </source>
     <php>
