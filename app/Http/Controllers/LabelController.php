@@ -72,7 +72,7 @@ class LabelController extends Controller
     {
         if ($label->tasks()->exists()) {
             flash(__('flash.labels.delete.error'))->error();
-            back();
+            return back();
         }
 
         $label->delete();
