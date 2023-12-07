@@ -4,14 +4,18 @@ start:
 start-frontend:
 	npm run dev
 
+setup: env-prepare install fix-fakerphp key prepare-db
+	npm run build
+
+env-prepare:
+	cp -n .env.example .env
+
 install:
 	composer install
-	make fix-fakerphp
-	cp -n .env.example .env
-	make key
-	make prepare-db
 	npm ci
-	npm run build
+
+fix-fakerphp:
+	cp -f src/Person.php vendor/fakerphp/faker/src/Faker/Provider/ru_RU/Person.php
 
 key:
 	php artisan key:gen --ansi
@@ -19,26 +23,11 @@ key:
 prepare-db:
 	php artisan migrate:fresh --seed
 
-watch:
-	npm run watch
-
-migrate:
-	php artisan migrate
-
-console:
-	php artisan tinker
-
-log:
-	tail -f storage/logs/laravel.log
-
 test:
 	php artisan test
 
 test-coverage:
-	XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-clover ./build/logs/clover.xml
-
-deploy:
-	git push
+	XDEBUG_MODE=coverage php artisan test --coverage-clover ./build/logs/clover.xml
 
 lint:
 	composer exec phpcs -v
@@ -66,12 +55,3 @@ compose-db:
 
 compose-down:
 	docker-compose down -v
-
-ide-helper:
-	php artisan ide-helper:eloquent
-	php artisan ide-helper:gen
-	php artisan ide-helper:meta
-	php artisan ide-helper:mod -n
-
-fix-fakerphp:
-	cp -f src/Person.php vendor/fakerphp/faker/src/Faker/Provider/ru_RU/Person.php
