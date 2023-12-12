@@ -4,7 +4,7 @@ start:
 start-frontend:
 	npm run dev
 
-setup: install fix-fakerphp key prepare-db
+setup: env-prepare install fix-fakerphp key prepare-db
 	npm run build
 
 env-prepare:
