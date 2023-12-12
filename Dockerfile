@@ -17,6 +17,9 @@ RUN apt-get install -y nodejs
 WORKDIR /app
 
 COPY . .
-RUN make setup
+RUN composer install
+RUN make fix-fakerphp
+RUN npm ci
+RUN npm run build
 
-CMD ["bash", "-c", "php artisan serve --host=0.0.0.0 --port=$PORT"]
+CMD ["bash", "-c", "php artisan migrate:refresh --force --seed && php artisan serve --host=0.0.0.0 --port=$PORT"]
