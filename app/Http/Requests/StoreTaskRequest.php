@@ -23,8 +23,8 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', Rule::unique('tasks', 'name')->ignore($this->task)],
-            'description' => 'string|nullable',
+            'name' => ['required', 'max:255', 'string', Rule::unique('tasks', 'name')->ignore($this->task)],
+            'description' => 'string|max:500|nullable',
             'status_id' => 'required|exists:task_statuses,id',
             'assigned_to_id' => 'nullable|exists:users,id',
         ];
