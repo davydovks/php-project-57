@@ -39,6 +39,8 @@ class StoreTaskRequest extends FormRequest
     {
         return [
             'name.unique' => __('validation.unique_name'),
+            'name.max' => __('validation.max.string_f'),
+            'description.max' => __('validation.max.string_n'),
         ];
     }
 
