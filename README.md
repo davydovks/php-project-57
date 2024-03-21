@@ -8,7 +8,7 @@ Task manager written with Laravel.
 
 Users can register, log in and out, create tasks, statuses and labels. Tasks can be assigned to users, have status and several labels. Task list page allows to filter tasks by status, creator and responsible person.
 
-You can test the app here: https://task-manager-76kf.onrender.com/
+You can test the app here: https://task-manager-76kf.onrender.com/ (please wait 30-50 seconds for server to awake).
 
 ## Setup
 ```
