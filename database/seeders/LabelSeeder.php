@@ -13,9 +13,9 @@ class LabelSeeder extends Seeder
      */
     public function run(): void
     {
-        $tasks = Yaml::parseFile(database_path('labels.yaml'));
-        Label::factory(count($tasks))
-            ->sequence(...$tasks)
+        $labels = Yaml::parseFile(database_path('labels.yaml'));
+        Label::factory(count($labels))
+            ->sequence(...$labels)
             ->create();
     }
 }
